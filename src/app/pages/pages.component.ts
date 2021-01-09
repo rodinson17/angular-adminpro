@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { SettingsService } from './../services/settings.service';
 
+// variable global para recargar componentes
 declare function customInitFunctions();
 
 @Component({
