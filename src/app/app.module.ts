@@ -7,6 +7,7 @@ import { PagesModule } from './pages/pages.module';
 
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { PasswordDirective } from './directives/password.directive';
 
 /*import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
@@ -22,6 +23,7 @@ import { PagesComponent } from './pages/pages.component'; */
   declarations: [
     AppComponent,
     NotFoundComponent,
+    PasswordDirective,
     /* LoginComponent,
     RegisterComponent, */
     /* BreadcrumbsComponent,
