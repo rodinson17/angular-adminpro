@@ -11,6 +11,7 @@ import { PagesComponent } from './pages.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { PromiseComponent } from './promise/promise.component';
+import { UsersComponent } from './maintenance/users/users.component';
 
 
 
@@ -28,6 +29,9 @@ const routes: Routes = [
       { path: 'promises', component: PromiseComponent, data: { title: 'Promesas' } },
       { path: 'rxjs', component: RxjsComponent, data: { title: 'Rxjs' } },
       /* { path: '', redirectTo: '/dashboard', pathMatch: 'full' }, */
+
+      // Mantenimoentos
+      { path: 'users', component: UsersComponent, data: { title: 'Usuarios' } },
     ]
   },
 

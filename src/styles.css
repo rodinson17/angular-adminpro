@@ -5,6 +5,21 @@
   animation-fill-mode:both
 }
 
+.img-avatar {
+  width: 150px;
+  height: 150px;
+  margin: 0 1rem 1rem;
+}
+
 .cursor {
   cursor: pointer;
 }
+
+.w100 {
+  width: 100px;
+}
+
+.w140 {
+  width: 140px;
+}
+
