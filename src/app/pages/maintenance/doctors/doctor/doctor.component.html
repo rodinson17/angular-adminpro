@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Doctor</h4>
+        <h6 class="card-subtitle">Información</h6>
+
+        <form [formGroup]="doctorForm"
+          (ngSubmit)="onSubmit()"
+          class="form p-t-20">
+
+          <div *ngIf="doctorSelect" class="form-group text-center">
+            <label for="exampleInputuname">Foto</label>
+            <div class="text-center">
+              <img [src]="doctorSelect.img | image:'doctors'" class="img-avatar" alt="doctorSelect.name" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputuname">Nombre</label>
+            <div class="input-group">
+              <div class="input-group-addon"><i class="ti-user"></i></div>
+              <input formControlName="name"
+                type="text" class="form-control" id="exampleInputuname" placeholder="Nombre">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Hospital</label>
+            <div class="input-group">
+              <div class="input-group-addon"><i class="fa fa-hospital-o"></i></div>
+              <select formControlName="hospital" class="form-control">
+                <option value="">Seleccione un Hospital</option>
+                <option *ngFor="let hospital of listHopitals"
+                  [value]="hospital._id">{{ hospital.name }}</option>
+              </select>
+            </div>
+          </div>
+
+          <button [disabled]="doctorForm.invalid"
+            type="submit" class="btn btn-success waves-effect waves-light m-r-10">
+            <i class="fa fa-save"></i>
+            Guardar Cambios
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="hospitalSelect" class="col-md-6 animated fadeIn fast">
+    <div class="card">
+      <div class="card-body">
+          <h4 class="card-title">Hospital</h4>
+          <h6 class="card-subtitle">{{ hospitalSelect.name }}</h6>
+
+          <div class="text-center">
+            <img [src]="hospitalSelect.img | image:'hospitals'" class="img-avatar" alt="hospital" >
+          </div>
+     </div>
+    </div>
+  </div>
+</div>

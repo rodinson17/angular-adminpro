@@ -57,7 +57,7 @@ export class UsersComponent implements OnInit, OnDestroy {
     }
 
     this.searchesService.searches( 'users', termSearch )
-      .subscribe( resp =>  {
+      .subscribe( ( resp: User[] ) =>  {
         this.listUsers = resp;
       });
   }
@@ -106,9 +106,7 @@ export class UsersComponent implements OnInit, OnDestroy {
     this.getUsers();
 
      this.imgSubs = this.modalImagenService.newImage
-      .pipe(
-        delay(100)
-      )
+      .pipe( delay(100) )
       .subscribe( img => this.getUsers() );
   }
 

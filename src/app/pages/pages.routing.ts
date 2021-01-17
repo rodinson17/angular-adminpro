@@ -1,3 +1,5 @@
+import { DoctorsComponent } from './maintenance/doctors/doctors.component';
+import { HospitalsComponent } from './maintenance/hospitals/hospitals.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -12,6 +14,7 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { PromiseComponent } from './promise/promise.component';
 import { UsersComponent } from './maintenance/users/users.component';
+import { DoctorComponent } from './maintenance/doctors/doctor/doctor.component';
 
 
 
@@ -32,6 +35,9 @@ const routes: Routes = [
 
       // Mantenimoentos
       { path: 'users', component: UsersComponent, data: { title: 'Usuarios' } },
+      { path: 'hospitals', component: HospitalsComponent, data: { title: 'Hospitales' } },
+      { path: 'doctors', component: DoctorsComponent, data: { title: 'Doctores' } },
+      { path: 'doctor/:id', component: DoctorComponent, data: { title: 'Doctor' } },
     ]
   },
 
