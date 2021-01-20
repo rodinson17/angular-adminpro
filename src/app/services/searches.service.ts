@@ -44,6 +44,7 @@ export class SearchesService {
 
   searches( type: 'users'|'hospitals'| 'doctors', term: string) {
     const url = `${ base_url }/all/collection/${ type }/${ term }`;
+
     return this.httpClient.get<any[]>( url, this.headers )
       .pipe(
         map( ( resp: any ) => {
@@ -59,6 +60,12 @@ export class SearchesService {
           }
         })
       );
+  }
+
+  globalSearch ( term: string ) {
+    const url = `${ base_url }/all/${ term }`;
+
+    return this.httpClient.get( url, this.headers );
   }
 
 }

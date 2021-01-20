@@ -1,9 +1,11 @@
+import { SearchComponent } from './search/search.component';
 import { DoctorsComponent } from './maintenance/doctors/doctors.component';
 import { HospitalsComponent } from './maintenance/hospitals/hospitals.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AuthGuard } from './../guards/auth.guard';
+import { AdminGuard } from './../guards/admin.guard';
 
 import { ProfileComponent } from './profile/profile.component';
 import { Grafica1Component } from './grafica1/grafica1.component';
@@ -26,6 +28,7 @@ const routes: Routes = [
     children: [
       { path: '', component: DashboardComponent, data: { title: 'Dashboard' } },
       { path: 'profile', component: ProfileComponent, data: { title: 'Perfil' } },
+      { path: 'search/:term', component: SearchComponent, data: { title: 'Busquedas' } },
       { path: 'progress', component: ProgessComponent, data: { title: 'ProgressBar' } },
       { path: 'grafica1', component: Grafica1Component, data: { title: 'Grafica #1' } },
       { path: 'settings', component: AccountSettingsComponent, data: { title: 'Settings' } },
@@ -34,10 +37,13 @@ const routes: Routes = [
       /* { path: '', redirectTo: '/dashboard', pathMatch: 'full' }, */
 
       // Mantenimoentos
-      { path: 'users', component: UsersComponent, data: { title: 'Usuarios' } },
       { path: 'hospitals', component: HospitalsComponent, data: { title: 'Hospitales' } },
       { path: 'doctors', component: DoctorsComponent, data: { title: 'Doctores' } },
       { path: 'doctor/:id', component: DoctorComponent, data: { title: 'Doctor' } },
+
+      // Rutas de Admin
+      { path: 'users', canActivate: [ AdminGuard ], component: UsersComponent, data: { title: 'Usuarios' } },
+
     ]
   },
 

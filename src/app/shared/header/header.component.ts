@@ -22,6 +22,12 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl('/login');
   }
 
+  generalSearch( term: string ) {
+    if ( term.trim().length === 0 ) return; //this.router.navigateByUrl('/dashboard');
+
+    this.router.navigateByUrl( `/dashboard/search/${ term }` );
+  }
+
   ngOnInit(): void { }
 
 }
